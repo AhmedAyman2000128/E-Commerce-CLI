@@ -1,13 +1,14 @@
-package org.p1;
+package services;
 
 import Exceptions.InsufficientQuantityException;
+import products.Product;
 
 import java.util.HashMap;
 import java.util.Map;
 
 
 public class Cart {
-    Map<Product,Integer> products;
+    private Map<Product,Integer> products;
     public Cart(){
         products = new HashMap();
     }
@@ -24,19 +25,14 @@ public class Cart {
     }
 
     public void add(Product product,int quantity){
-        try{
-            product.reduceQuantity(quantity);
-            //Adding the same product to the cart
-            if(this.products.containsKey(product)){
-                this.products.put(product,this.products.get(product)+quantity);
-            }
-            //Adding product for the first time in the cart
-            else{
-                this.products.put(product,quantity);
-            }
+        product.reduceQuantity(quantity);
+        //Adding the same product to the cart
+        if(this.products.containsKey(product)){
+            this.products.put(product,this.products.get(product)+quantity);
         }
-        catch (InsufficientQuantityException e){
-            System.out.println(e.getMessage());
+        //Adding product for the first time in the cart
+        else{
+            this.products.put(product,quantity);
         }
     }
     public void remove(Product product,int quantity){
@@ -56,5 +52,11 @@ public class Cart {
                 product.increaseQuantity(quantity);
             }
         }
+    }
+    public void clearCart(){
+        this.products.clear();
+    }
+    public boolean isEmpty(){
+        return this.products.size() == 0;
     }
 }

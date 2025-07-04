@@ -1,4 +1,6 @@
-package org.p1;
+package Customer;
+
+import Exceptions.InsufficientBalanceException;
 
 public class Customer {
     private String name;
@@ -22,5 +24,13 @@ public class Customer {
 
     public void setBalance(double balance) {
         this.balance = balance;
+    }
+    public void withdraw(double withdrawalAmount){
+        if(withdrawalAmount > this.balance){
+            throw new InsufficientBalanceException("Insufficient balance !");
+        }
+        else{
+            this.balance -= withdrawalAmount;
+        }
     }
 }

@@ -1,11 +1,11 @@
-package org.p1;
+package products;
 
 import Exceptions.InsufficientQuantityException;
 
 public abstract class Product {
-    private String name;
-    private double price;
-    private int quantity;
+    private String name; // name of product ex: DinaFarmsCheese
+    private double price; // Unit price of product
+    private int quantity; // product quantity found in store
     public Product(String name,double price,int quantity){
         this.name = name;
         this.price = price;
@@ -37,7 +37,7 @@ public abstract class Product {
     }
     public void reduceQuantity(int quantityToReduce){
         if(quantityToReduce > this.quantity){
-            throw new InsufficientQuantityException("Only " + this.getQuantity() + " available for " + this.getName() + ", So not added to cart!");
+            throw new InsufficientQuantityException("Only " + this.getQuantity() + " available for " + this.getName());
         }
         this.quantity -=quantityToReduce;
     }
