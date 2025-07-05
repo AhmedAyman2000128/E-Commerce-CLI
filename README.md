@@ -93,19 +93,7 @@ A **Java-based console application** that simulates a mini e-commerce platform. 
 <img width="662" alt="image" src="https://github.com/user-attachments/assets/afc082a7-5e22-4a69-a42f-4e5cfcc5360c" />
 <img width="539" alt="image" src="https://github.com/user-attachments/assets/a4db5f54-5af0-4d4f-8f10-5cb793d09239" />
 
-## 🚀 How to Run
-### ✅ Prerequisites
-Before running the project, make sure you have:
-- Java 17+
-- Maven
-
 ### UML
 <img width="997" alt="image" src="https://github.com/user-attachments/assets/0d0b4bd0-aa65-4511-a27e-5c35c5bcdcaf" />
 
-### Running
-```bash
-cd E-Commerce-CLI
-mvn compile
-mvn exec:java -Dexec.mainClass="Main.Main"
-```
 ### 
