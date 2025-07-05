@@ -99,6 +99,9 @@ Before running the project, make sure you have:
 - Java 17+
 - Maven
 
+### UML
+<img width="997" alt="image" src="https://github.com/user-attachments/assets/0d0b4bd0-aa65-4511-a27e-5c35c5bcdcaf" />
+
 ### Running
 ```bash
 cd E-Commerce-CLI
