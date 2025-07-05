@@ -19,6 +19,6 @@ public abstract class ExpirableProduct extends Product{
         this.expirationDate = expirationDate;
     }
     public boolean isExpired(){
-        return LocalDate.now().isAfter(this.expirationDate);
+        return LocalDate.now().isAfter(this.expirationDate) || LocalDate.now().isEqual(this.expirationDate);
     }
 }

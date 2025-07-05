@@ -35,14 +35,16 @@ public abstract class ShippingService {
             return;
         }
         double totalWeight = 0;
-        System.out.println("** Shipment notice **");
+        System.out.println("************ Shipment notice *************");
+        System.out.printf("%-5s %-20s %10s%n", "Qty", "Item", "Weight");
         for(Shippable p:shippableItems.keySet()){
             int quantity = shippableItems.get(p);
             double productWeight = p.getWeight()*quantity;
             totalWeight+=productWeight;
-            System.out.println(quantity + "x " + p.getName() + "     " + parseWeight(productWeight));
+            System.out.printf("%-5s %-20s %10s%n", quantity + "x", p.getName(), parseWeight(productWeight));
         }
-        System.out.println("Total package weight " + parseWeight(totalWeight));
+        System.out.println("----------------------------------------");
+        System.out.printf("%-26s %10s%n", "Total package weight", parseWeight(totalWeight));
         System.out.println();
     }
     private static String parseWeight(double weight) {
