@@ -1,7 +1,5 @@
 package products;
 
-import java.time.LocalDate;
-
 public class TV extends Product implements Shippable{
     private double weight;
     public TV(String name, double price, int quantity, double weight){

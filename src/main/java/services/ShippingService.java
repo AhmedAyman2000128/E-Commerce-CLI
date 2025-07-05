@@ -1,19 +1,9 @@
 package services;
 
-import products.Product;
 import products.Shippable;
-
-import java.util.ArrayList;
 import java.util.HashMap;
 
 public abstract class ShippingService {
-//    public static ArrayList<Shippable>[] getShippableItems(){
-//        ArrayList<Shippable>shippables = new ArrayList<>();
-//        //TODO: Pass cart as an argument
-//        //TODO: Loop the cart and add to the shippables
-//        //TODO: Return Shippables
-//
-//    }
     public static double computeShippingCost(HashMap<Shippable,Integer>shippableItems){
         if(shippableItems.size() == 0){
             return 0;
@@ -28,7 +18,7 @@ public abstract class ShippingService {
         if(totalWeight<10){
             return 10;
         }
-        return Math.ceil(totalWeight) * 10;
+        return Math.ceil(totalWeight/10) * 10;
     }
     public static void printReceipt(HashMap<Shippable,Integer>shippableItems){
         if(shippableItems.size() == 0){

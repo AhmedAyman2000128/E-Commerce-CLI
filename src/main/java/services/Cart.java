@@ -2,10 +2,8 @@ package services;
 
 import Exceptions.InsufficientQuantityException;
 import products.Product;
-
 import java.util.HashMap;
 import java.util.Map;
-
 
 public class Cart {
     private Map<Product,Integer> products;
@@ -42,7 +40,7 @@ public class Cart {
         }
         else{
             if(currentQuantity<quantity){
-                throw new InsufficientQuantityException(currentQuantity + " of " + product.getName() + " only exist not " + quantity);
+                throw new InsufficientQuantityException(currentQuantity + " of " + product.getName() + " only exist in cart not " + quantity);
             }
             else if(currentQuantity.equals(quantity)){
                 this.products.remove(product);
