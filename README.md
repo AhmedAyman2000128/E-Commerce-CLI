@@ -1,27 +1,21 @@
 # 🛒 E-Commerce Checkout System
 
-This is a **Java-based console application** simulating a basic e-commerce platform. It supports product management, shopping cart operations, shipping fee calculation, and a full checkout process — all with proper validation and error handling.
+A **Java-based console application** that simulates a mini e-commerce platform. It supports shopping cart operations, product expiration checks, shipping fee calculations, and a complete checkout experience with detailed receipts and proper exception handling.
 
 ---
 
 ## 📦 Features
 
-- Define products with `name`, `price`, and `quantity`
-- Support for:
-  - **Expirable** products (e.g., Cheese, Biscuits)
-  - **Shippable** products with weights (e.g., Cheese, TV)
-  - **Non-expirable, non-shippable** products (e.g., Scratch Cards)
-- Add/remove products from cart
-- Cart operations respect:
-  - Product availability
-  - Expiration status
-- Checkout includes:
-  - Empty cart check
-  - Product expiration check
-  - Balance verification
-  - Shipping fee calculation
-  - Receipt + shipment notice printing
-- Custom exception handling
+- Create and manage products (shippable, expirable, etc.)
+- Add/remove items from the shopping cart
+- Validate product availability, expiration, and customer balance
+- Shipping cost calculation based on total weight
+- Checkout process with:
+  - Shipping receipt
+  - Purchase receipt
+  - Balance update
+- Handles all business logic exceptions
+
 
 ---
 
@@ -62,42 +56,42 @@ This is a **Java-based console application** simulating a basic e-commerce platf
 
 ## Examples
 - All products are available, None are expired, The customer has enough balance, Cart is not empty, Including shippable and non-shippable products.
-<img width="671" alt="image" src="https://github.com/user-attachments/assets/77419f16-8b5d-4b32-a6f6-4b443d260b54" />
+<img width="662" alt="image" src="https://github.com/user-attachments/assets/4563f665-143e-4caf-8df2-e3ffbcd7cfdb" />
 <img width="290" alt="image" src="https://github.com/user-attachments/assets/c1c5063e-de0b-4af3-a0fa-e6cd14ed4953" />
 
 - All products are available, None are expired, The customer has enough balance, Cart is not empty, non-shippable products.
-<img width="666" alt="image" src="https://github.com/user-attachments/assets/b0547c49-4bdc-4286-a91b-fcdd33fca23e" />
+<img width="663" alt="image" src="https://github.com/user-attachments/assets/5d9b1acb-a50f-43a6-88bd-469f203ff112" />
 <img width="290" alt="image" src="https://github.com/user-attachments/assets/6d83e216-b0e5-4359-ae7f-ea16e50be5d7" />
 
 - Insufficient Customer balance (balance is 1000EGP, products total is 10240EGP).
-<img width="665" alt="image" src="https://github.com/user-attachments/assets/5a7e23db-e46c-4deb-b1d5-dc1e7fb9d291" />
-<img width="641" alt="image" src="https://github.com/user-attachments/assets/9872ebce-c7fe-40f1-899f-6d2a0a4c39d2" />
+<img width="662" alt="image" src="https://github.com/user-attachments/assets/8012d195-0e76-4659-8119-a53041faa43f" />
+<img width="636" alt="image" src="https://github.com/user-attachments/assets/abe83ec2-77c5-4601-b266-8c3d45063474" />
 
 - Insufficent product quantity (6 dinaFarms are required to be added but 5 only available).
-<img width="660" alt="image" src="https://github.com/user-attachments/assets/8e2011eb-acf6-438c-933d-267dc4d19fe7" />
-<img width="695" alt="image" src="https://github.com/user-attachments/assets/a4ed9920-d956-4722-b745-5b8152d477af" />
+<img width="662" alt="image" src="https://github.com/user-attachments/assets/10f41c3f-b155-4d71-aeab-3cbd3b93e6c3" />
+<img width="692" alt="image" src="https://github.com/user-attachments/assets/4926b4fb-0237-4432-8f16-2198410f2533" />
 
 - Empty cart.
-<img width="662" alt="image" src="https://github.com/user-attachments/assets/8bcd145e-3ab1-4efc-a44c-4af70821cf1b" />
-<img width="536" alt="image" src="https://github.com/user-attachments/assets/049590af-4fea-4f3a-a139-1e4daf925380" />
+<img width="664" alt="image" src="https://github.com/user-attachments/assets/d235c1f0-4859-4eb8-b7b9-a3556139d14a" />
+<img width="547" alt="image" src="https://github.com/user-attachments/assets/8e0e9260-63cb-4479-a6f8-b55bd74899a5" />
 
-- Expired product (dina farms expiration date is 1-7-2025).
-<img width="662" alt="image" src="https://github.com/user-attachments/assets/f7cd5599-4a53-481a-9d9d-23d6bd8c1ff8" />
-<img width="602" alt="image" src="https://github.com/user-attachments/assets/103d03f1-dd4f-4303-a9c2-280e87fff313" />
+- Expired products (dinaFarms,ulker expiration dates are 1-7-2025 , 10-8-2024 respectively).
+<img width="661" alt="image" src="https://github.com/user-attachments/assets/7534088e-d455-4533-abd1-4b3a2580996f" />
+<img width="626" alt="image" src="https://github.com/user-attachments/assets/eb7aef13-e55b-47d3-a058-2b0958d95871" />
 
 - Removing sufficient quantity from cart.
-<img width="663" alt="image" src="https://github.com/user-attachments/assets/27027596-50ff-42b1-8f63-d7a00e8ce008" />
+<img width="662" alt="image" src="https://github.com/user-attachments/assets/49a0e455-dfdd-4a17-aa0a-aa39af446caf" />
 <img width="316" alt="image" src="https://github.com/user-attachments/assets/c9853a54-978c-459a-bcd3-4c58a23210a7" />
 
 - Removing insufficient quantity from cart.
-<img width="664" alt="image" src="https://github.com/user-attachments/assets/8ae6d7b5-995b-4c04-9bb3-5f7529f9f795" />
-<img width="739" alt="image" src="https://github.com/user-attachments/assets/7461b64c-703c-4751-90d7-5b44a8f4fc87" />
-<img width="664" alt="image" src="https://github.com/user-attachments/assets/d6276cae-173e-4f3e-a179-e0bb17813feb" />
-<img width="649" alt="image" src="https://github.com/user-attachments/assets/cc01525b-8f88-40a4-93be-39c4420dde15" />
+<img width="659" alt="image" src="https://github.com/user-attachments/assets/951fdcc1-2f03-417e-aae5-1a1198b39526" />
+<img width="745" alt="image" src="https://github.com/user-attachments/assets/0c08b75c-fc7c-4240-8a00-778e25e55be2" />
+<img width="662" alt="image" src="https://github.com/user-attachments/assets/435e7a43-3014-4157-a2d6-5aa301143419" />
+<img width="641" alt="image" src="https://github.com/user-attachments/assets/1cb2d545-866e-4c96-bf49-3ab327a06134" />
 
 - Removing from cart till cart is empty
-<img width="661" alt="image" src="https://github.com/user-attachments/assets/3b058b2d-9848-48dd-b86b-093a737047d4" />
-<img width="553" alt="image" src="https://github.com/user-attachments/assets/b30345a6-1e66-4170-9881-e0a15a45150f" />
+<img width="662" alt="image" src="https://github.com/user-attachments/assets/afc082a7-5e22-4a69-a42f-4e5cfcc5360c" />
+<img width="539" alt="image" src="https://github.com/user-attachments/assets/a4db5f54-5af0-4d4f-8f10-5cb793d09239" />
 
 ## 🚀 How to Run
 ### ✅ Prerequisites
