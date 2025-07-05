@@ -6,12 +6,10 @@ import products.Cheese;
 import products.ScratchCard;
 import products.TV;
 import services.Cart;
-import services.Checkout;
 
 public class Main {
     public static void main(String[] args) {
         // Products in the store
-
         //// Shippable products
         Cheese dinaFarmsCheese = new Cheese("dinaFarms",50,5,250,"1-7-2026");
         TV toshiba = new TV("toshiba",10000,10,10000);
@@ -20,17 +18,16 @@ public class Main {
         //// Non-shippable products
         ScratchCard sc = new ScratchCard("Vodafone card",20,1000);
 
-        // Cart and Customer
-        Customer customer = new Customer("Ahmed Ayman Abd El Fatah",20000);
-        Cart cart = new Cart();
+        // Customer
+        Customer c1 = new Customer("Ahmed Ayman Abd El Fatah",20000);
 
         // Cart Addition
-        cart.add(dinaFarmsCheese,2);
-        cart.add(toshiba,1);
-        cart.add(ulker,10);
-        cart.add(sc,1);
+        c1.addToCart(dinaFarmsCheese,2);
+        c1.addToCart(toshiba,1);
+        c1.addToCart(ulker,10);
+        c1.addToCart(sc,1);
 
         // Checkout
-        Checkout.checkout(customer,cart);
+        c1.checkout();
     }
 }
